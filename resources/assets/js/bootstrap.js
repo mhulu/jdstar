@@ -1,7 +1,7 @@
 import {API_ROOT} from './config'
 window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
-require('../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js');
+require('bootstrap-sass');
 require('./plugins/datepicker');
 // require('./dropzone');
 window.Vue = require('vue');

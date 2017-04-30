@@ -16,18 +16,16 @@ Route::group(['namespace' => 'Star\ICenter\Controllers', 'middleware' => 'web'],
 	Route::get('register', 'Auth\RegisterController@showRegistrationForm');
 	Route::get('reset', 'Auth\ResetPasswordController@reset');
 	Route::get('logout', 'Auth\LoginController@logout');
-
+	Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'auth.status']], function () {
+		Route::get('{path?}', 'HomeController@index')->where('path', '[\/\w\.-]*');
+	});
 	// Route::get('storage/exports/{filename}', 'Api\CreateExcel@download');
 });
 
-/* Dashboard Index */
-// Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'auth.status']], function () {
-// 	Route::get('{path?}', 'HomeController@index')->where('path', '[\/\w\.-]*');
-// });
 // Route::any('/wechat', 'WechatController@serve');
 // Route::get('/getUserInfo', 'WechatController@getUserInfo')->middleware('wechat.oauth');
 
-// API SECTION
+/* API SECTION */
 
 // 手机验证用
 Route::group(['namespace' => 'Star\ICenter\Controllers\Api', 'prefix' => 'api', 'middleware' => 'api'], function () {
