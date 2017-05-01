@@ -7,6 +7,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Star\ICenter\Events\ModelDeleted;
 use Star\ICenter\Events\UserCreated;
+use Star\ICenter\Models\Profile;
+use Star\ICenter\Models\Unit;
 use Star\ICenter\Permission\Traits\HasRoles;
 
 class User extends Authenticatable {

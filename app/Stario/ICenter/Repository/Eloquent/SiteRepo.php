@@ -2,8 +2,8 @@
 namespace Star\ICenter\Repository\Eloquent;
 
 use App\User;
-use Star\ICenter\Pop;
-use Star\ICenter\Unit;
+use Star\ICenter\Models\Pop;
+use Star\ICenter\Models\Unit;
 
 /**
  * 提供站点的一些统计数据
